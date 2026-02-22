@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import portfolioData from '../../data/portfolio_data.json';
 
 const Work = () => {
