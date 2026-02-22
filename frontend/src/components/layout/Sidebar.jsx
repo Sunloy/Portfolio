@@ -76,6 +76,9 @@ const Sidebar = ({ activeSection }) => {
                     </div>
                 </div>
             </div>
+            <footer className="px-6 flex flex-col items-center mt-8">
+                <p className="text-xs mb-2 text-gray-500 dark:text-gray-500 transition-colors duration-300">© 2026 SOU ROSUN. All rights reserved.</p>
+            </footer>
         </aside>
     );
 };
