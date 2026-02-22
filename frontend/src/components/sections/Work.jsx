@@ -55,10 +55,10 @@ const Work = () => {
                     {filteredProjects.map((project) => (
                         <div
                             key={project.id}
-                            className="group relative overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800 aspect-[4/3] cursor-pointer shadow-sm hover:shadow-md transition-all duration-300"
+                            className="group relative overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800 aspect-[4/5] cursor-pointer shadow-sm hover:shadow-md transition-all duration-300"
                         >
                             <img
-                                src={project.image_url}
+                                src={project.image_url.startsWith('http') ? project.image_url : `http://localhost:3001${project.image_url}`}
                                 alt={`${project.category} Project`}
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                             />

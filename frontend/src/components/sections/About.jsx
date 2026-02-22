@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiMonitor, FiDatabase, FiSmartphone, FiCpu } from 'react-icons/fi';
+import { FiMonitor, FiDatabase, FiSettings, FiCpu } from 'react-icons/fi';
 
 const About = () => {
     return (
@@ -31,8 +31,8 @@ const About = () => {
                         <h3 className="text-sm font-semibold text-gray-800 dark:text-white">Web Dev</h3>
                     </div>
                     <div className="p-6 border-b-2 border-yellow-500 bg-white dark:bg-gray-800 shadow-[0_0_20px_rgba(0,0,0,0.05)] flex flex-col items-center text-center transition-all hover:-translate-y-2 duration-300">
-                        <FiSmartphone className="text-yellow-500 text-3xl mb-4" />
-                        <h3 className="text-sm font-semibold text-gray-800 dark:text-white">Responsive</h3>
+                        <FiSettings className="text-yellow-500 text-3xl mb-4" />
+                        <h3 className="text-sm font-semibold text-gray-800 dark:text-white">Engineering</h3>
                     </div>
                     <div className="p-6 border-b-2 border-purple-500 bg-white dark:bg-gray-800 shadow-[0_0_20px_rgba(0,0,0,0.05)] flex flex-col items-center text-center transition-all hover:-translate-y-2 duration-300">
                         <FiCpu className="text-purple-500 text-3xl mb-4" />

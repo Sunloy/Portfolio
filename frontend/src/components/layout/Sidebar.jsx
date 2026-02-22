@@ -1,5 +1,5 @@
 import img from "../../assets/sun.jpg";
-import { FiMoon, FiSun, FiFacebook, FiTwitter, FiInstagram, FiLinkedin } from 'react-icons/fi';
+import { FiMoon, FiSun, FiFacebook, FiTwitter, FiInstagram, FiLinkedin, FiDownload } from 'react-icons/fi';
 import { useTheme } from '../../hooks/useTheme'; // <-- Import the hook
 
 const Sidebar = ({ activeSection }) => {
@@ -22,12 +22,12 @@ const Sidebar = ({ activeSection }) => {
             <div>
                 <div className="flex justify-center">
                     {/* Added a subtle ring for dark mode to help the image pop */}
-                    <img src={img} alt="Profile" className="w-32 h-32 rounded-full object-cover dark:ring-4 dark:ring-gray-800" />
+                    <img src={img} alt="Profile" className="w-52 h-52 rounded-full object-cover dark:ring-4 dark:ring-gray-800" />
                 </div>
 
                 <div className="text-center mt-6 mb-10">
                     {/* Added dark mode text color */}
-                    <h1 className="text-2xl font-bold mb-2 text-gray-800 dark:text-white transition-colors duration-300">SUN</h1>
+                    <h1 className="text-2xl font-bold mb-2 text-gray-800 dark:text-white transition-colors duration-300">SOU ROSUN </h1>
                     <p className="text-blue-500 text-[10px] tracking-[2px] font-semibold uppercase mb-1">
                         Web Dev / Civil Engineer
                     </p>
@@ -58,11 +58,22 @@ const Sidebar = ({ activeSection }) => {
                     {theme === 'dark' ? <><FiSun size={14} /> Light</> : <><FiMoon size={14} /> Dark</>}
                 </button>
 
-                <div className="flex gap-4 mt-2 text-gray-400 dark:text-gray-500">
-                    <FiFacebook size={14} className="hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer transition-colors" />
-                    <FiTwitter size={14} className="hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer transition-colors" />
-                    <FiInstagram size={14} className="hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer transition-colors" />
-                    <FiLinkedin size={14} className="hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer transition-colors" />
+                <div className="flex flex-col items-center gap-4 mt-2">
+
+                    <div className="flex gap-4 text-gray-400 dark:text-gray-500">
+                        <a href="https://web.facebook.com/ro.sun.716" target="_blank" rel="noopener noreferrer">
+                            <FiFacebook size={14} className="hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer transition-colors" />
+                        </a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                            <FiTwitter size={14} className="hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer transition-colors" />
+                        </a>
+                        <a href="https://www.instagram.com/rosunnnnnnnn/" target="_blank" rel="noopener noreferrer">
+                            <FiInstagram size={14} className="hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer transition-colors" />
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                            <FiLinkedin size={14} className="hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer transition-colors" />
+                        </a>
+                    </div>
                 </div>
             </div>
         </aside>
