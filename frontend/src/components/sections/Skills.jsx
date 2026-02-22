@@ -1,16 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { fetchData } from '../../api';
+import portfolioData from '../../data/portfolio_data.json';
 
 const Skills = () => {
-    const [skillData, setSkillData] = useState([]);
-
-    useEffect(() => {
-        const loadSkills = async () => {
-            const data = await fetchData('/skills');
-            setSkillData(data);
-        };
-        loadSkills();
-    }, []);
+    const skillData = portfolioData.skills;
 
     return (
         <section id="skills" className="py-24 border-b border-gray-100 dark:border-gray-800 transition-colors duration-300">

@@ -1,17 +1,8 @@
-import React, { useEffect, useState } from 'react';
 import { FiBriefcase } from 'react-icons/fi';
-import { fetchData } from '../../api';
+import portfolioData from '../../data/portfolio_data.json';
 
 const Experience = () => {
-    const [experiences, setExperiences] = useState([]);
-
-    useEffect(() => {
-        const loadExperience = async () => {
-            const data = await fetchData('/experience');
-            setExperiences(data);
-        };
-        loadExperience();
-    }, []);
+    const experiences = portfolioData.experience;
 
     return (
         <section id="experience" className="py-24 border-b border-gray-100 dark:border-gray-800 transition-colors duration-300">

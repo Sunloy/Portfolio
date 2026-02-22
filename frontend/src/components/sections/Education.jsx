@@ -1,19 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FiPlus, FiMinus } from 'react-icons/fi';
-import { fetchData } from '../../api';
+import portfolioData from '../../data/portfolio_data.json';
 
 const Education = () => {
-    const [educationData, setEducationData] = useState([]);
+    const educationData = portfolioData.education;
     // State to track which accordion is open. Defaulting to the first one.
     const [openIndex, setOpenIndex] = useState(0);
-
-    useEffect(() => {
-        const loadEducation = async () => {
-            const data = await fetchData('/education');
-            setEducationData(data);
-        };
-        loadEducation();
-    }, []);
 
     return (
         <section id="education" className="py-24 border-b border-gray-100 dark:border-gray-800 transition-colors duration-300">

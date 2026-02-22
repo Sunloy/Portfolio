@@ -1,22 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { fetchData } from '../../api';
+import portfolioData from '../../data/portfolio_data.json';
 
 const Work = () => {
     const [activeTab, setActiveTab] = useState('All');
-    const [projects, setProjects] = useState([]);
-    const [categories, setCategories] = useState(['All']);
+    const projects = portfolioData.work;
 
-    useEffect(() => {
-        const loadWork = async () => {
-            const data = await fetchData('/work');
-            setProjects(data);
-
-            // Extract unique categories
-            const uniqueCategories = ['All', ...new Set(data.map(item => item.category))];
-            setCategories(uniqueCategories);
-        };
-        loadWork();
-    }, []);
+    // Extract unique categories
+    const categories = ['All', ...new Set(projects.map(item => item.category))];
 
     // Filter projects based on the active tab
     const filteredProjects = activeTab === 'All'
@@ -58,7 +47,7 @@ const Work = () => {
                             className="group relative overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800 aspect-[4/5] cursor-pointer shadow-sm hover:shadow-md transition-all duration-300"
                         >
                             <img
-                                src={project.image_url.startsWith('http') ? project.image_url : `http://localhost:3001${project.image_url}`}
+                                src={project.image_url}
                                 alt={`${project.category} Project`}
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                             />

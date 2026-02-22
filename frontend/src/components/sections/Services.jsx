@@ -1,17 +1,8 @@
-import React, { useEffect, useState } from 'react';
 import * as FeatherIcons from 'react-icons/fi';
-import { fetchData } from '../../api';
+import portfolioData from '../../data/portfolio_data.json';
 
 const Services = () => {
-    const [services, setServices] = useState([]);
-
-    useEffect(() => {
-        const loadServices = async () => {
-            const data = await fetchData('/services');
-            setServices(data);
-        };
-        loadServices();
-    }, []);
+    const services = portfolioData.services;
 
     // Helper to render icon dynamically
     const renderIcon = (iconName, className) => {
